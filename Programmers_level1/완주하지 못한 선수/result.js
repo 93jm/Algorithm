@@ -1,13 +1,6 @@
 function solution(participant, completion) {
   participant.sort();
   completion.sort();
-  for (let i = 0; i < participant.length; i++) {
-    for (let j = 0; j < completion.length; j++) {
-      if (participant[i] === completion[j]) {
-        participant.splice(i, 1);
-      }
-    }
-  }
-
-  return participant.toString();
+  return participant.find((v, i) => v !== completion[i]);
 }
+solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"]);
