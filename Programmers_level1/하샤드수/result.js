@@ -1,5 +1,5 @@
 function solution(x) {
-  str = x.toString();
+  str = x + "";
   helper = 0;
   for (i in str) {
     helper += Number(str[i]);
