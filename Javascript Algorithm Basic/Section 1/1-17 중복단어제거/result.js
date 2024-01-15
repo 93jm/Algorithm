@@ -17,28 +17,8 @@
 // time
 // student
 
-// function solution(str) {
-//   let answer = '';
-//   for(let i=0; i<str.length; i++) {
-//     if(str.indexOf(str[i])===i) {
-//       answer += str[i];
-//     }
-//   }
-//   return answer;
-// }
-
-function solution(str) {
-  const result = [...str].reduce((acc, cur) => {
-    if (!acc[cur]) {
-      acc[cur] = 1;
-    } else {
-      acc[cur] += 1;
-    }
-
-    return acc;
-  }, {});
-
-  return Object.keys(result).join("");
+function solution(strArr) {
+  return strArr.filter((i, idx) => strArr.indexOf(i) === idx);
 }
 
-solution("ksekkset");
+solution(["good", "time", "good", "time", "student"]);
