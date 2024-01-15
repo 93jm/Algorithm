@@ -17,7 +17,7 @@ function soultion(arr) {
   const max = 100;
   //배열 총 합
   const arrSum = arr.reduce((acc, cur) => acc + cur, 0);
-
+  let flag = 0;
   //찾기
   for (let i = 0; i < arr.length - 1; i++) {
     for (let j = i + 1; j < arr.length; j++) {
@@ -26,7 +26,12 @@ function soultion(arr) {
         //뒤에서부터 지우기
         arr.splice(j, 1);
         arr.splice(i, 1);
+        flag = 1;
+        break;
       }
+    }
+    if (flag === 1) {
+      break;
     }
   }
   return arr;

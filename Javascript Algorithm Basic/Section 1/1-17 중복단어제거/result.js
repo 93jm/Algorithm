@@ -1,12 +1,44 @@
-// 100이하의 자연수 A, B, C를 입력받아 세 수 중 가장 작은 값을 출력하는 프로그램을 작성하 세요.(정렬을 사용하면 안됩니다)
-// ▣ 입력설명
-// 첫 번째 줄에 100이하의 세 자연수가 입력된다.
-// ▣ 출력설명
-// 첫 번째 줄에 가장 작은 수를 출력한다.
-// ▣ 입력예제 1 6 5 11
-// ▣ 출력예제 1 5
 // [자바스크립트 알고리즘 문제풀이]
+// 중복단어제거
 
-function solution() {
-  return;
+// N개의 문자열이 입력되면 중복된 문자열은 제거하고 출력하는 프로그램을 작성하세요. 출력하는 문자열은 원래의 입력순서를 유지합니다.
+// ▣ 입력설명
+// 첫 줄에 자연수 N이 주어진다.(3<=N<=30)
+// 두 번째 줄부터 N개의 문자열이 주어진다. 문자열의 길이는 100을 넘지 않습니다.
+// ▣ 출력설명
+// 첫 줄부터 중복이 제거된 문자열을 차례로 출력한다.
+// ▣ 입력예제 1
+// 5
+// good
+// time
+// good time student
+// ▣ 출력예제 1
+// good
+// time
+// student
+
+// function solution(str) {
+//   let answer = '';
+//   for(let i=0; i<str.length; i++) {
+//     if(str.indexOf(str[i])===i) {
+//       answer += str[i];
+//     }
+//   }
+//   return answer;
+// }
+
+function solution(str) {
+  const result = [...str].reduce((acc, cur) => {
+    if (!acc[cur]) {
+      acc[cur] = 1;
+    } else {
+      acc[cur] += 1;
+    }
+
+    return acc;
+  }, {});
+
+  return Object.keys(result).join("");
 }
+
+solution("ksekkset");
