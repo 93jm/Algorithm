@@ -7,8 +7,10 @@
 // 첫 줄에 문자열이 주어지고, 두 번째 줄에 문자가 주어진다.
 // ▣ 출력설명
 // 첫 줄에 해당 문자의 개수를 출력한다.
-// ▣ 입력예제 1 COMPUTERPROGRAMMING R
-// ▣ 출력예제 1 3
+// ▣ 입력예제 1
+// COMPUTERPROGRAMMING R
+// ▣ 출력예제 1
+// 3
 
 function solution(str, arg) {
   return str.length - str.split(arg).join("").length;

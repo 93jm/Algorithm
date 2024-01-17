@@ -38,21 +38,13 @@ function solution(numbers) {
   let keepgoing = 1; //올라가는 값
 
   for (let i = 0; i < numbers.length; i++) {
-    //첫번째 인덱스인 경우
-    if (i === 0) {
-      if (numbers[i] === 1) {
-        answer += keepgoing;
-        keepgoing += 1;
-      }
+    //값이 0인 경우
+    if (numbers[i] === 0) {
+      //keepgoing 1로 초기화
+      keepgoing = 1;
     } else {
-      //값이 0인 경우
-      if (numbers[i] === 0) {
-        //keepgoing 1로 초기화
-        keepgoing = 1;
-      } else {
-        answer += keepgoing;
-        keepgoing += 1;
-      }
+      answer += keepgoing;
+      keepgoing += 1;
     }
   }
   return answer;

@@ -6,8 +6,10 @@
 // 첫 줄에 문자열이 입력된다. 문자열의 길이는 100을 넘지 않습니다.
 // ▣ 출력설명
 // 첫 줄에 대문자로 통일된 문자열이 출력된다.
-// ▣ 입력예제 1 ItisTimeToStudy
-// ▣ 출력예제 1 ITISTIMETOSTUDY
+// ▣ 입력예제 1
+// ItisTimeToStudy
+// ▣ 출력예제 1
+// ITISTIMETOSTUDY
 
 function solution(str) {
   return str.toUpperCase();

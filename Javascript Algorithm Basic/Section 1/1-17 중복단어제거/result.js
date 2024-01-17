@@ -12,7 +12,8 @@
 // good
 // time
 // good time student
-// ▣ 출력예제 1
+// ▣ 출력예제
+// 1
 // good
 // time
 // student

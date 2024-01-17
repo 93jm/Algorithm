@@ -7,8 +7,10 @@
 // 첫 줄에 문자열이 입력됩니다.
 // ▣ 출력설명
 // 첫 줄에 중복문자가 제거된 문자열을 출력합니다.
-// ▣ 입력예제 1 ksekkset
-// ▣ 출력예제 1 kset
+// ▣ 입력예제 1
+// ksekkset
+// ▣ 출력예제 1
+// kset
 
 // function solution(str) {
 //   let answer = '';
