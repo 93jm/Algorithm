@@ -12,6 +12,59 @@
 // ▣ 출력예제 1
 // 23 2 73 2 3
 
-function solution(str) {}
+// function isPrime(n) {
+//     if(n === 1) {
+//       return false;
+//     }
 
-solution();
+//     for(let i=2; i<n/2; i++) {
+//       if(n%i === 0) {
+//         return false;
+//       }
+//     }
+
+//     return true;
+//   }
+
+//   function solution(numbers) {
+//     let answers = [];
+//     for(let i of numbers) {
+//       let res = 0;
+
+//       //숫자 뒤집기 array method X
+//       while(i) {
+//         let t=i%10;
+//         res=res*10+t;
+//         i=Math.floor(i/10);
+//       }
+
+//       if(isPrime(res)) {
+//         answers.push(res)
+//       }
+//     }
+
+//     return answers;
+//   }
+
+function solution(numbers) {
+  let answers = [];
+  for (let i of numbers) {
+    let reverseNumber = i.toString().split("").reverse().join("") * 1;
+
+    if (reverseNumber > 1) {
+      for (let x = 2; x <= reverseNumber; x++) {
+        //자기 자신보다 작은데 나눠서 나머지가 0이 되는 경우는 소수가 아님
+        if (x < reverseNumber && reverseNumber % x === 0) {
+          break;
+        }
+        if (x === reverseNumber) {
+          answers.push(reverseNumber);
+        }
+      }
+    }
+  }
+
+  return answers;
+}
+
+solution([32, 55, 62, 20, 250, 370, 200, 30, 100]);

@@ -12,6 +12,26 @@
 // ▣ 출력예제 1
 // 137
 
-function solution(str) {}
+function solution(numbers) {
+  let answers = 0;
+  let max = Number.MIN_SAFE_INTEGER;
 
-solution();
+  for (let i of numbers) {
+    let sum = i
+      .toString()
+      .split("")
+      .reduce((acc, cur) => acc + Number(cur), 0);
+
+    if (sum > max) {
+      max = sum;
+      answers = i;
+    } else if (sum === max) {
+      if (answers < i) {
+        answers = i;
+      }
+    }
+  }
+  return answers;
+}
+
+solution([128, 460, 603, 40, 521, 137, 123]);
