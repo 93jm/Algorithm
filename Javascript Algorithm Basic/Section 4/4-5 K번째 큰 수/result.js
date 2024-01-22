@@ -13,7 +13,22 @@
 // 13 15 34 23 45 65 33 11 26 42
 // ▣ 출력예제 1
 // 143
+function solution(numbers, target) {
+  const length = numbers.length;
+  let answer = [];
+  let check = 0;
+  for (let i = 0; i < length - 2; i++) {
+    for (let j = i + 1; j < length - 1; j++) {
+      for (let k = j + 1; k < length; k++) {
+        const sum = numbers[i] + numbers[j] + numbers[k];
+        answer.push(sum);
+      }
+    }
+  }
 
-function solution(str) {}
+  const result = [...new Set(answer.sort((a, b) => (a > b ? -1 : 1)))];
 
-solution();
+  return result[target - 1];
+}
+
+solution([13, 15, 34, 23, 45, 65, 33, 11, 26, 42], 3);
