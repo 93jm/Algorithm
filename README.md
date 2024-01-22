@@ -1,11 +1,14 @@
-# Welcome! 😄
+## Welcome! 😄
 
-Hello I'm Evan
+Hello I'm Evan <br />
+This is my algorithm repository, and each folder has a problem and a solution.
 
-## 알고리즘 언어
+## Language
 
-- Javascript 와 Python만 사용
+- Javascript
 
-## 참고 사이트
+## Reference
 
-- <a href="https://programmers.co.kr/">프로그래머스</a>
+- JavaScript Basic Algorithm
+- <a href="https://programmers.co.kr/">Programmers</a>
+- <a href="https://www.acmicpc.net/problemset/">Baekjoon</a>
