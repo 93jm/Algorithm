@@ -18,6 +18,44 @@
 // 출력설명
 // (2, 2), (4, 3), (4, 5)와 (10, 3)를 할인받아 (5, 3)에 사면 비용이 4+7+9+8=28입니다.
 
-function solution(str) {}
+function soultion(money, ps) {
+  //몇개를 살 수 있는지 counting
+  let answer = 0;
+  //학생 수
+  const n = ps.length;
+  //입력받은 상품의 배송비+상품값 합을 오름차순으로 정렬
+  const sortedPs = ps.sort((a, b) => (a[0] + a[1] > b[0] + b[1] ? 1 : -1));
 
-solution();
+  for (let i = 0; i < n; i++) {
+    //예산(money)에서 i번째 상품 가격을 쿠폰(/2)을 써서 나온 금액을 뺀 값의 금액
+    let remainder = money - (sortedPs[i][0] / 2 + sortedPs[i][1]);
+    let count = 1;
+
+    //위에서 쿠폰을 쓴 상품을 구매했으니 나머지 상품들을 다 구매하기
+    for (let j = 0; j < n; j++) {
+      const buyItem = sortedPs[j][0] + sortedPs[j][0];
+
+      //구매할 상품이 남은 금액보다 클 경우 구매가 안되서 break;
+      if (j !== i && buyItem > money) {
+        break;
+      }
+
+      //할인한 상품인 i를 제외하며 구매할 상품이 남은 금액보다 작거나 같을 경우 구매가능
+      if (j !== i && buyItem <= remainder) {
+        remainder -= buyItem;
+        count++;
+      }
+    }
+    answer = Math.max(answer, count);
+  }
+  return answer;
+}
+
+//[상품가격, 배송비]를 담아 총 5명의 학생이 제출했다.
+soultion(28, [
+  [6, 6],
+  [2, 2],
+  [4, 3],
+  [4, 5],
+  [10, 3],
+]);
