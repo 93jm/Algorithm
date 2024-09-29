@@ -14,6 +14,29 @@
 // 23679
 // ▣ 출력예제 1 12335679
 
-function solution() {}
+function solution(arr1, arr2) {
+  let result = [];
+  let n = arr1.length;
+  let m = arr2.length;
+  let p1 = (p2 = 0);
 
-solution();
+  while (p1 < n && p2 < m) {
+    if (arr1[p1] <= arr2[p2]) {
+      result.push(arr1[p1++]);
+    } else {
+      result.push(arr2[p2++]);
+    }
+  }
+
+  while (p1 < n) {
+    result.push(arr1[p1++]);
+  }
+
+  while (p2 < m) {
+    result.push(arr2[p2++]);
+  }
+
+  return result;
+}
+
+solution([1, 3, 5], [1, 2, 3, 4, 5, 6, 7]);
